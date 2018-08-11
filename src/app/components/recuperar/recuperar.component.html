@@ -1,0 +1,28 @@
+<div class="section">
+  <div class="row center-align">
+    <br>
+    <h5>Recuperar Contraseña</h5>
+    <br>
+    <div class="col s12">
+      <div class="row">
+        <div class="input-field col s10 offset-s1">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="usuario" type="text" class="validate" [(ngModel)]="user.usuario" />
+          <label for="usuario">Nombre de Usuario</label>
+        </div>
+        <div class="input-field col s10 offset-s1">
+          <i class="material-icons prefix">mail</i>
+          <input id="correo" type="email" class="validate" [(ngModel)]="user.correo" />
+          <label for="correo">Correo</label>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <button type="button" class="waves-effect waves-light btn blue darken-4" (click)="recuperar()">Continuar</button>
+      </div>
+      <a routerLink="/login">
+        regresar al login
+      </a>
+    </div>
+  </div>
+</div>

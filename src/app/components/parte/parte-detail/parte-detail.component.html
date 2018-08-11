@@ -1,0 +1,127 @@
+<nav class="blue darken-4">
+  <div class="nav-wrapper">
+    <ul class="left">
+      <li>
+        <a routerLink="/parte-list" class="waves-effect waves-light">
+          <i class="material-icons">arrow_back</i>
+        </a>
+      </li>
+    </ul>
+    <a class="brand-logo center">
+      <h6 class="m-t-2rm">
+        <span *ngIf="estado">Nuevo</span>
+        Parte
+        <span *ngIf="!estado">{{parte.codigo}}</span>
+      </h6>
+    </a>
+    <ul class="right">
+      <li>
+        <a (click)="deleteParte()" *ngIf="!estado" class="waves-effect waves-light">
+          <i class="material-icons">delete</i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+  <div class="section no-padding">
+    <div class="card-panel center-align m-b-0">
+      <div class="row">
+        <label *ngIf="estado">Los campos con (*) son obligatorios</label>
+        <br>
+        <br>
+        <div class="col s10 offset-s1">
+          <div class="row">	
+
+            
+            <label for="codPart">Código Parte </label> 
+            
+
+
+            <div class="input-field col s12">
+              <label for="fechaParte" [ngClass]="{'active': !estado}">*Fecha Parte</label>
+              <br>
+              <input id="fechaParte" type="date" class="validate" [(ngModel)]="parte.fecha">
+            </div>
+        
+
+
+            <div class="input-field col s12">
+                <input id="identificacion" type="number" class="validate" [(ngModel)]="identificacion">
+                <label for="identificacion" [ngClass]="{'active': !estado}">*Identificación</label>
+              </div>
+              
+          
+
+            <div class="input-field col s12">
+              <select id="dependencia" materialize="material_select" [(ngModel)]="dependencia">
+                <option *ngFor="let dependencia of dependenciaService.dependencias" [value]="dependencia.id">{{dependencia.nombre}}</option>
+              </select>
+              <label for="dependencia">*Dependencia</label>
+            </div>
+
+
+            <div class="input-field col s12">
+                <input id="lugar" type="text" class="validate" [(ngModel)]="parte.lugar">
+                <label for="lugar" [ngClass]="{'active': !estado}">*Lugar Parte</label>
+            </div>
+
+
+            <div class="input-field col s12">
+              <select id="tipoComparendo" materialize="material_select" [(ngModel)]="tipoComparendo">
+                <option *ngFor="let tipoComparendo of tipoComparendoService.tipoComparendos" [value]="tipoComparendo.codigo">{{tipoComparendo.tipo}}</option>
+              </select>
+              <label for="tipoComparendo">*Tipo de Comparendo</label>
+            </div>
+
+
+            <div class="input-field col s12">
+              <select id="tipoVehiculo" materialize="material_select" [(ngModel)]="tipoVehiculo">
+                <option *ngFor="let tipoVehiculo of tipoVehiculoService.tipoVehiculos" [value]="tipoVehiculo.codigo">{{tipoVehiculo.tipo}}</option>
+              </select>
+              <label for="tipoVehiculo">*Tipo de Vehículo</label>
+            </div>
+
+
+            <div class="input-field col s12">
+                <input id="placa" type="text" class="validate" [(ngModel)]="parte.placa">
+                <label for="placa" [ngClass]="{'active': !estado}">*Placa</label>
+            </div>
+
+
+            <div class="input-field col s12">
+                <input id="descripcion" type="text" class="validate" [(ngModel)]="parte.descripcion">
+                <label for="descripcion" [ngClass]="{'active': !estado}">*Descripción Parte</label>
+            </div>
+
+      
+
+
+
+      
+
+            -------------------------------------------------
+            <br>  
+        <!-- <div class="input-field col s12">
+            <input id="user" type="text" class="validate" [(ngModel)]="usuario.usuario">
+            <label for="user" [ngClass]="{'active': !estado}">*Miembro PMA</label>
+        </div>-->
+
+		
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed-action-btn">
+    <a (click)="saveParte()" *ngIf="estado" class="btn-floating btn-large waves-effect waves-light z-depth-3 blue darken-4">
+      <i class="material-icons">save</i>
+    </a>
+    <a (click)="editParte()" *ngIf="!estado" class="btn-floating btn-large waves-effect waves-light z-depth-3 blue darken-4">
+      <i class="material-icons">edit</i>
+    </a>
+  </div>
+</div>

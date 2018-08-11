@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+.loader {
+    top: 40% !important;
+}
+
+.list {
+    display: list-item !important;
+}
+
+.container {
+    width: 100% !important;
+    position: absolute !important;
+    height: calc(100% - 56px) !important;
+    z-index: 1 !important;
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+nav .input-field label {
+    top: -12px !important;
+}
+
+.m-t-5 {
+    margin-top: 5px !important;
+}
+
+.m-t-1rm {
+    margin-top: 1.15rem !important;
+}
+
+.m-t-2rm {
+    margin-top: 1.5rem !important;
+}
+
+.m-t-0 {
+    margin-top: 0 !important;
+}
+
+.m-b-0 {
+    margin-bottom: 0 !important;
+}
+
+.f-s-0 {
+    font-size: 0.9rem !important;
+}
+
+ul.side-nav ul.collapsible-accordion a.collapsible-header {
+    padding: 0 30px !important;
+}
+
+ul.side-nav ul.collapsible-accordion .collapsible-body li a {
+    font-weight: 400 !important;
+    padding: 0 37.5px 0 45px !important;
+}
